@@ -54,14 +54,16 @@ Follow these steps to run the project on your local machine:
 5. **Run the Streamlit Application**
 6. **Interacting with the Dashboard**
 
-## 💡 Features
-**Geo-Visualization:** Interactive maps to view transaction and user data across India by states, districts, and pincodes.
-**Time Series Analysis:** Trends of transaction amounts and registered users over time (2018 Q1 to 2024 Q2).
-**Top Metrics:** Get quick access to the top 10 states, districts, and pincodes with the highest transaction amounts and registered users.
-**Interactive Dropdowns:** Allow users to explore key insights into the PhonePe transaction data by selecting different options from the dropdown menu.
 
-# For any queries or suggestions, feel free to reach out to me at:
-**Email:** shaikrahemathds@gmail.com
-**GitHub:** Your GitHub Profile
-**LinkedIn:** Your LinkedIn Profile
+## 💡 Features
+
+* **Geo-Visualization:** Interactive maps to view transaction and user data across India by states, districts, and pincodes.
+* **Time Series Analysis:** Trends of transaction amounts and registered users over time (2018 Q1 to 2024 Q2).
+* **Top Metrics:** Get quick access to the top 10 states, districts, and pincodes with the highest transaction amounts and registered users.
+* **Interactive Dropdowns:** Allow users to explore key insights into the PhonePe transaction data by selecting different options from the dropdown menu.
+
+## Contact
+
+* **Email:** shaikrahemathds@gmail.com
+* **LinkedIn:** [Rahemath](https://www.linkedin.com/in/rahemath/)
 
