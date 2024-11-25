@@ -25,7 +25,7 @@ st.set_page_config(
 
 # =============================== SIDEBAR MENU ===============================
 with st.sidebar:
-    selected = option_menu("Menu", ["Data Overview", "Top Charts", "Insights"], 
+    selected = option_menu("Menu", ["Data Overview", "Top Metrics", "Insights"], 
                            icons=["table", "bar-chart", "lightbulb"],
                            menu_icon="menu-button-wide",
                            default_index=0,

@@ -1,83 +1,67 @@
-📊 PhonePe Pulse Data Visualization
-Welcome to the PhonePe Pulse Data Visualization project! Dive into an insightful journey exploring PhonePe transaction data from 2018 Q1 to 2024 Q2. This project showcases a seamless blend of data extraction, cleaning, and visualization using top-notch tools like Python, Pandas, MySQL, and Streamlit.
+# 📊 PhonePe Pulse Data Visualization and Exploration: A User-Friendly Tool Using Streamlit and Plotly
 
-🌟 Project Highlights
-🚀 Interactive Data Exploration: Navigate through transaction and user data across various states and quarters with ease.
+Welcome to the **PhonePe Pulse Data Visualization Project**! Dive into an insightful exploration of PhonePe transaction data from **2018 Q1 to 2024 Q2**. This project demonstrates a seamless integration of **data extraction, cleaning, and visualization** using tools like **Python**, **Pandas**, **MySQL**, **Plotly**, and **Streamlit**.
 
-📈 Stunning Visuals: Enjoy aesthetically pleasing and insightful visualizations crafted with Plotly.
+---
 
-🔍 Deep Insights: Gain meaningful insights into payment trends, and understand both inter-state and intra-state disparities.
+## 🛠️ General Workflow of the Project
 
-🛠️ Tech Stack
-Python: The backbone for data manipulation and web app creation.
+![General Workflow](workflow.png)
 
-Pandas: Efficient data cleaning and processing.
+---
 
-MySQL: Reliable storage for our cleaned data.
+## 🗂️ Basic Schema of the Application
 
-Streamlit: Rapidly turns data scripts into shareable web apps.
+The application is divided into three main sections:
 
-Plotly: Creates detailed and interactive charts.
+### 1. **Data Overview**
+   - Provides a comprehensive overview of the entire dataset.
+   - The data is divided into two main categories:
+     - **Transactions**:
+       - Displays the number of transactions and transaction amounts at the national level, broken down by states (Geo Visualization).
+       - General trend analysis of transactions over the years (2018 Q1 to 2024 Q2).
+       - State-wise comparison of transactions.
+     - **Users**:
+       - Shows the number of registered users and app openings (an indicator of app usage frequency).
+       - Geo-visualization of user registrations and app openings over time.
+       - State-wise comparison of registered users.
 
-📁 Repository Structure
-.
-├── data/                   # Directory containing extracted and cleaned data
-├── notebooks/              # Jupyter notebooks for data extraction and cleaning
-├── scripts/                # Python scripts for data processing and transformation
-├── app.py                  # Main Streamlit application script
-├── requirements.txt        # Dependencies and libraries required
-└── README.md               # You are here!
-⚙️ Getting Started
-Follow these steps to set up and run the project locally:
+### 2. **Top Metrics**
+   - **Transactions**:
+     - Top 10 states with the highest transaction amounts.
+     - Top 10 districts with the highest transaction amounts.
+     - Top 10 pincodes with the highest transaction amounts.
+     - Most popular payment methods.
+   - **Users**:
+     - Top 10 brands with the highest number of registered users.
+     - Top 10 districts with the highest number of registered users.
+     - Top 10 pincodes with the highest number of registered users.
+     - Top 10 states with the highest number of registered users.
 
-Clone the repository:
+### 3. **Insights**
+   - A dropdown feature to explore key insights and behavior patterns related to PhonePe users and transactions.
 
-sh
-git clone https://github.com/your-username/phonepe-pulse-visualization.git
-cd phonepe-pulse-visualization
-Set up a virtual environment:
+---
 
-sh
-python -m venv venv
-source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
-Install the dependencies:
+## 🚀 How to Set Up and Run the Project Locally
 
-sh
-pip install -r requirements.txt
-Configure MySQL database:
+Follow these steps to run the project on your local machine:
 
-Ensure MySQL is installed and running on your system.
+1. **Clone the Repository**
+2. **Set Up a Virtual Environment**
+3. **Install Dependencies**
+4. **Configure MySQL Database**
+5. **Run the Streamlit Application**
+6. **Interacting with the Dashboard**
 
-Create a database named phone_pe_project_latest.
+## 💡 Features
+**Geo-Visualization:** Interactive maps to view transaction and user data across India by states, districts, and pincodes.
+**Time Series Analysis:** Trends of transaction amounts and registered users over time (2018 Q1 to 2024 Q2).
+**Top Metrics:** Get quick access to the top 10 states, districts, and pincodes with the highest transaction amounts and registered users.
+**Interactive Dropdowns:** Allow users to explore key insights into the PhonePe transaction data by selecting different options from the dropdown menu.
 
-Update database connection details in the app.py file.
-
-Run the Streamlit application:
-
-sh
-streamlit run app.py
-🎨 Features & Visuals
-Data Overview
-View comprehensive transaction and user data across different states and quarters.
-
-Visualize trends over time using line plots and choropleth maps.
-
-Top Charts
-Discover top states, districts, and pincodes by transaction amounts and user counts.
-
-Interactive pie charts, sunburst charts, and treemaps for an engaging visual experience.
-
-Insights
-In-depth analysis of changing payment trends.
-
-Identify and understand inter-state and intra-state disparities.
-
-Utilize scatter plots and bar charts to gain valuable insights.
-
-📧 Contact
-For any queries or suggestions, feel free to reach out at your-email@example.com.
-
-
-
-
+# For any queries or suggestions, feel free to reach out to me at:
+**Email:** shaikrahemathds@gmail.com
+**GitHub:** Your GitHub Profile
+**LinkedIn:** Your LinkedIn Profile
 
