@@ -288,7 +288,7 @@ if selected == "Data Overview":
 
 # =============================== TOP CHARTS PAGE ===============================
 
-elif selected == "Top Charts":
+elif selected == "Top Metrics":
     st.markdown("""<h1 style='text-align: center; color: violet;'>TOP METRICS</h1>""", unsafe_allow_html=True)
     col1, col2 = st.columns(2)
     with col1:
@@ -471,7 +471,13 @@ elif selected == "Insights":
                                        'nagaland', 'odisha', 'puducherry', 'punjab', 'rajasthan', 'sikkim',
                                        'tamil-nadu', 'telangana', 'tripura', 'uttar-pradesh', 'uttarakhand', 'west-bengal'), index=30)
             
-    Insight = st.selectbox("Select Insights", ("Change in Payment Trends", "Inter State Disparity", "Intra State Disparity"))
+    Insight = st.selectbox("Select Insights",
+                           ("Change in Payment Trends",
+                            "Inter State Disparity",
+                            "Intra State Disparity",
+                            "Bottom 10 States : Transaction",
+                            "Bottom 10 States : Users"
+                            ))
 
     if Insight == "Change in Payment Trends":
         df3 = fetch_data("select * from aggregate_transactions")
@@ -574,3 +580,51 @@ elif selected == "Insights":
         except Exception as e:
             st.error(f"An error occurred: {str(e)}")
 
+    elif Insight == "Bottom 10 States : Transaction":
+        query = f"""SELECT State,SUM(Amount) AS TotalAmount , SUM(Count) as TotalCount FROM map_transactions
+                    WHERE Year = {Year} AND Quarter = {Quarter}
+                    GROUP BY State ORDER BY TotalAmount ASC
+                    LIMIT 10"""
+        
+        try:
+            df3 = fetch_data(query)
+            if not df3.empty:    
+                st.markdown("### :violet[Bottom 10 States - Transaction Amount]")            
+                df3.columns = ['State', 'TotalAmount', 'TotalCount']            
+                fig = px.bar(df3, x="State", y="TotalAmount", color="State")
+                st.plotly_chart(fig, use_container_width=True)
+                
+                st.markdown("### :violet[Bottom 10 States - Transaction Count]")
+                fig = px.bar(df3, x="State", y="TotalCount", color="State")
+                st.plotly_chart(fig, use_container_width=True)
+                
+            else:
+                st.warning("No data available for the selected year and quarter.")
+        except Exception as e:
+            st.error(f"An error occurred: {str(e)}")
+            
+    
+    elif Insight == "Bottom 10 States : Users":
+        query = f"""SELECT State, User_count, App_opens FROM aggregate_user_count
+                    WHERE Year = {Year} AND Quarter = {Quarter}
+                    ORDER BY User_count ASC LIMIT 10"""
+        
+        try:
+            df3 = fetch_data(query)
+            if not df3.empty:    
+                st.markdown("### :violet[Bottom 10 States - User Count]")            
+                df3.columns = ['State', 'User_count', 'App_opens']            
+                fig = px.bar(df3, x="State", y="User_count", color="State")
+                st.plotly_chart(fig, use_container_width=True)
+                
+                st.markdown("### :violet[Bottom 10 States - App Opens]")
+                fig = px.bar(df3, x="State", y="App_opens", color="State")
+                st.plotly_chart(fig, use_container_width=True)
+                
+            else:
+                st.warning("No data available for the selected year and quarter.")
+        except Exception as e:
+            st.error(f"An error occurred: {str(e)}")
+            
+     #================================================xxxxxxxxxxxxxxxxx=========================================
+            
